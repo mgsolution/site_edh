@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  background: #111;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* Estilos base */
+.main {
+  max-width: 75rem;
+  padding: 3em 1.5em;
+  margin: 0 auto;
+}
+
+.main_heading {
+  font-weight: 600;
+  font-size: 2.25em;
+  margin-bottom: 0.75em;
+  text-align: center;
+  color: #eceff1;
+}
+
+/* Efeito 3D do carrossel */
+.carousel {
+  perspective: 18000px;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  margin: 2rem 0;
+}
+
+.carousel__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__item {
+  position: absolute;
+  width: 280px;
+  height: 400px;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  backface-visibility: hidden;
+}
+
+.carousel__item.active {
+  animation: pulseGlow 2s infinite;
+  border: 2px solid rgba(190, 161, 81, 0.5);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(190, 161, 81, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(190, 161, 81, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(190, 161, 81, 0);
+  }
+}
+
+.member-description {
+  background: rgba(18, 29, 43, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(190, 161, 81, 0.2);
+}
+
+.carousel__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+}
+
+/* Botões de navegação */
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.486);
+  border: none;
+  width: 40px;
+  height: 60px;
+  border-radius: 20%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.carousel__button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel__button--left {
+  left: 20px;
+}
+
+.carousel__button--right {
+  right: 20px;
+}
+
+/* Efeito overlay para cards não ativos */
+.carousel__item:not(.active)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(58, 58, 58, 0.4);
+  pointer-events: none;
+}
+
+.carousel__item.active {
+  z-index: 5;
+}
+
+/* Animação do card ativo */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(187, 204, 232, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+.carousel__item.active {
+  animation: pulse 2s infinite;
+  border: 2px solid #46494e;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel {
+    height: 500px;
+  }
+  
+  .carousel__item {
+    width: 220px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 400px;
+  }
+  
+  .carousel__item {
+    width: 180px;
+    height: 260px;
+  }
+  
+  .carousel__button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* Estilo para a seção de descrição */
+.member-description {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.member-description h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.member-description p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Ajuste na altura do carrossel para acomodar a descrição */
+.carousel {
+  height: 500px;  /* Reduzindo um pouco a altura para dar espaço à descrição */
+}
+
+.carousel__button {
+  color: #f9f9f7; /* Adicionando cor dourada para o ícone da seta */
+}
+
+.carousel__button svg {
+  width: 24px;
+  height: 24px;
+  fill: #f9f9f7; /* Cor dourada para o SVG */
+  stroke: #fdfcfb; /* Cor dourada para o contorno do SVG */
+}
+
+.carousel__button:hover svg {
+  fill: #fcfbfa; /* Cor um pouco mais clara no hover */
+  stroke: #f5f4f1;
+}
