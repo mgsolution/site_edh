@@ -11,18 +11,18 @@ export const Hero = () => {
         playsInline
         className="absolute inset-0 h-full w-full object-cover opacity-90"
       >
-        <source src="/site_edh/videos/Página inicial.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}videos/Página inicial.mp4?v=${Date.now()}`} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative z-10 bg-gradient-to-b from-gray-300/20 to-blue-900/70 backdrop-blur-sm min-h-screen w-full">
+      <div className="relative z-10 bg-gradient-to-b from-gray-100/10 to-blue-600/90 backdrop-blur-sm min-h-screen w-full">
         <div className="container mx-auto px-4 min-h-screen flex items-center justify-center">
           <div className="text-center text-white py-20">
             <motion.img
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              src="/site_edh/images/logo1.png"
+              src={`${import.meta.env.BASE_URL}images/logo1.png`}
               alt="Logo EDH"
               className="mx-auto mb-8 w-48 md:w-72 h-auto max-w-full drop-shadow-[-5px_-5px_5px_rgba(0,0,0,0.9)]"
             />
@@ -30,7 +30,7 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-3xl md:text-5xl font-bold mb-4 text-yellow-500 drop-shadow-[-4px_-4px_5px_rgba(0,0,0,0.9)]"
+              className="text-3xl md:text-5xl font-bold mb-4 text-yellow-300/80 drop-shadow-[-4px_-4px_5px_rgba(0,0,0,0.9)]"
             >
               Excelência em Desenvolvimento Humano
             </motion.h1>
@@ -54,9 +54,9 @@ export const Hero = () => {
         >
           <defs>
             <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="50%" style={{ stopColor: '#3b38a8' }} />
-              <stop offset="50%" style={{ stopColor: '#3b38a8' }} />
-              <stop offset="100%" style={{ stopColor: '#3b38a8' }} />
+              <stop offset="50%" style={{ stopColor: '#3180ad' }} />
+              <stop offset="50%" style={{ stopColor: '#3180ad' }} />
+              <stop offset="100%" style={{ stopColor: '#318ead' }} />
             </linearGradient>
           </defs>
           <path

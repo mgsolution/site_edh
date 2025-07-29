@@ -11,7 +11,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="flex items-center">
-            <OptimizedImage src="/site_edh/images/logo.png" alt="EDH Logo" className="h-14" />
+            <OptimizedImage src={`${import.meta.env.BASE_URL}images/logo.png`} alt="EDH Logo" className="h-14" />
   
           </a>
 

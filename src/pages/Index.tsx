@@ -14,7 +14,7 @@ const Index = () => {
       <About />
       <Services />
       <Team />
-      <Events />
+      <Events topWaveColor="#121626" bottomWaveColor="#ffffff" />
       <Contact />
     </div>
   );

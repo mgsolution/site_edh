@@ -1,0 +1,59 @@
+.main {
+  /* max-width: 75rem; */
+  /* padding: 3em 1.5em; */
+}
+
+.main_heading {
+  font-weight: 600;
+  font-size: 2.25em;
+  margin-bottom: 0.75em;
+  text-align: center;
+  color: #eceff1;
+}
+
+.cards {
+  position: relative;
+}
+
+.cards_inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+}
+
+.overlay .cta {
+  display: block;
+  grid-row: -1;
+  width: 100%;
+  background-color: hsl(var(--hsl));
+  box-shadow: 0 8 0 1px hsl(var(--hsl));
+}
+
+/* Image Slider using Gsap... */
+
+.card {
+  --flow-space: 8.5em;
+  --hsl: var(--hue), var(--saturation), var(--lightness);
+  padding: 1.5cm 2em;
+  gap: 1.25em;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  align-items: start;
+  color: #eceff1;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  flex: 1 1 14rem; /* Corrected from 14neik to 14rem, assuming a typo */
+}
+
+.card:nth-child(1) {
+  --hue: 165;
+  --saturation: 82.26%;
+  --lightness: 51.37%;
+}
+
+.card:nth-child(2) {
+  --hue: 291.34;
+  --saturation: 95.9%;
+  --lightness: 61.76%;
+}
